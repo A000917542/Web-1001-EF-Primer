@@ -8,6 +8,7 @@ builder.Services.AddControllersWithViews();
 
 builder.Services.AddDbContext<BlogContext>(options => {
     options.UseSqlite(@"Data Source=c:\Temp\mydb.db;");
+    // options.UseMySql(@"Connection string");
 });
 
 var app = builder.Build();

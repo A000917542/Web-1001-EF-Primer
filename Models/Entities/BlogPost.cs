@@ -7,6 +7,9 @@ namespace Web_1001_EF_Primer.Web_1001_EF_Primer.Models.Entities
         [Key]
         public string Url { get; set; }
         public string Title { get; set; }
+        
+        [Display(Name = "Published")]
+        [DisplayFormat(DataFormatString = "{0:MMMM/dd/yyyy}")]
         public DateTime PublicationDate { get; set; }
         public string EditorsNote { get; set; }
         public string Content { get; set; }

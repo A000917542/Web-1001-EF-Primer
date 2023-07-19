@@ -18,9 +18,8 @@ public class HomeController : Controller
 
     public IActionResult Index()
     {
-        ViewData["Count"] = _db.Posts.Count();
-        ViewData["BlogTitle"] = _db.Posts.First().Title;
-        return View();
+        var posts = _db.Posts.ToList();
+        return View(posts);
     }
 
     public IActionResult Privacy()
