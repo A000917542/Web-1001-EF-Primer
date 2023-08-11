@@ -8,13 +8,14 @@ namespace Web_1001_EF_Primer.Web_1001_EF_Primer.Models.Entities
     [EntityTypeConfiguration(typeof(CommentConfig))]
     public class Comment
     {
-        [DataType(DataType.Email)]
+        [DataType(DataType.EmailAddress)]
         public string Author { get; set; }
         public DateTime CommentDate { get; set; }
+        public string BlogUrl { get; set; }
+
+        [Required]
         public string Text { get; set; }
         
-        [ForeignKey("Post")]
-        public string BlogUrl { get; set; }
         public BlogPost Post { get; set; }
     }
 }
